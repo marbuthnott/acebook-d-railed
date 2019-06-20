@@ -8,3 +8,9 @@ def sign_up(email: "test@test.com", password: "password")
   fill_in("user[password]", with: password)
   click_button("Signup")
 end
+
+def add_post(message: "Post number one")
+  visit "/posts/new"
+  fill_in "Message", with: message
+  click_button "Submit"
+end
