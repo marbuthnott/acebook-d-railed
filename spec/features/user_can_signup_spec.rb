@@ -36,7 +36,7 @@ RSpec.feature 'Signup', type: :feature do
       expect(page).to have_content('Password is too short (minimum is 6 characters)')
     end
 
-    scenario "user provides a password sorter than 6 characters" do
+    scenario "user provides a password shorter than 6 characters" do
       sign_up(name: 'test', email: "test@test.com", password: "12345", password_confirmation: '12345')
 
       expect(page).to have_content("Password is too short (minimum is 6 characters)")
@@ -66,6 +66,7 @@ RSpec.feature 'Signup', type: :feature do
       sign_up(name: 'test', email: "test@test.com", password: "123456789", password_confirmation: '123456789')
 
       expect(page).to have_current_path("/posts")
+      click_link("Sign out")
 
       sign_up(name: 'test', email: "test@test.com", password: "12345", password_confirmation: '12345')
 
@@ -93,7 +94,7 @@ RSpec.feature 'Signup', type: :feature do
   end
 
   context "User must provide a name" do
-    scenario "user must provide a name" do
+    scenario "user leaves name field empty" do
       sign_up(name: '', email: "test@test.com", password: "123456789", password_confirmation: '123456789')
 
       expect(page).to have_content('Name can\'t be blank')

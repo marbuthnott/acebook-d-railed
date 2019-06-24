@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Posts', type: :feature do
-  scenario 'Users are able to delete thier own posts' do
+  scenario 'Users are able to delete their own posts' do
     sign_up(name: 'test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
     visit '/posts/new'
     fill_in 'Message', with: 'Post number one'
