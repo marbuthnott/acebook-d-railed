@@ -1,36 +1,58 @@
-<div class='sign-up-in-tile'>
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
 
-<%= link_to "Sign in", new_session_path %>
+  <body>
+    <h1>ACEBOOK</h1>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-md-2'></div>
+          <div class='col-md-8'>
+            <div class='row'>
+              <div class='col-md-6'>
+                <img src='https://wallpaperplay.com/walls/full/3/2/3/215274.jpg'>
+              </div>
+              <div class='col-md-6'>
+                <ul>
+                  <a href='<%= new_session_path %>'>Sign In</a>
+                  <a class='a_signup' href='<%= root_path %>'> / Sign Up</a>
+                </ul>
+                  <%= bootstrap_form_for(@user, url: users_path) do |f| %>
 
-<h1>Sign up to Acebook</h1>
-<%= flash[:have_to_log_in_error] %>
+                  <%= f.text_field :name, label: "Name" %><br>
+                 ​
+                  <%= f.text_field :email, label: "Email" %><br>
 
-  <% if @user.errors.any? %>
-     <div id="error_explanation">
-       <h3>
-         <%= pluralize(@user.errors.count, "error") %>
-       </h3>
-       <% @user.errors.full_messages.each do |msg| %>
-         <li><%= msg %></li>
+                  <%= f.password_field :password, label: "Password" %><br>
+                 ​
+                  <%= f.password_field :password_confirmation, label: 'Password Confirmation' %> <br>
+                 ​
+                  <%= f.submit "Signup" %>
+
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <div class ='col-md-2'></div>
+      </div>
+    </div>
+    
+    <%= flash[:have_to_log_in_error] %>
+
+      <% if @user.errors.any? %>
+         <div id="error_explanation">
+           <h3>
+             <%= pluralize(@user.errors.count, "error") %>
+           </h3>
+           <% @user.errors.full_messages.each do |msg| %>
+             <li><%= msg %></li>
+           <% end %>
+         </div>
        <% end %>
-     </div>
-   <% end %>
 
-   <%= form_for(@user, url: users_path) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br>
-   ​
-    <%= f.label :email %>
-    <%= f.text_field :email %><br>
+    </div>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %><br>
-   ​
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %> <br>
-   ​
-    <%= f.submit "Signup" %>
+  </body>
 
-  <% end %>
-
-</div>
+</html>

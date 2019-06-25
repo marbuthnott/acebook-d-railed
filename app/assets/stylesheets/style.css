@@ -1,0 +1,74 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background-image: url('https://wallpaperplay.com/walls/full/3/2/3/215274.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: new time roman;
+}
+
+img{
+	width: 377px;
+	height: 420px;
+}
+
+.col-md-8{
+	margin-top: 80px;
+	background: rgba(0, 0, 0, 0.5);
+	box-shadow: -1px 1px 50px 1-px black;
+	padding: 10px;
+}
+
+ul{
+	margin-bottom: 20px; 
+}
+
+ul a{
+	font-size: 29px;
+	color: white;
+}
+
+ul a:hover{
+	text-decoration: none;
+}
+
+h1{
+	color: white;
+	text-align: center;
+}
+
+.a_signup{
+	border-bottom: 2px solid lightgreen;
+	padding: 10px;
+}
+
+.label{
+	font-size: 25px;
+	color: white;
+	font-weight: normal;
+}
+
+.form-control{
+	background-color: transparent;
+	border-bottom: 2px solid lightgreen;
+	font-size: 25px;
+	padding: 20px;
+}
+
+.btn-info{
+	background-color: transparent;
+	border-bottom: 0px;
+	width: 300px;
+	border: 2px solid lightgreen;
+	font-size: 20px;
+	border-radius: 0px;
+	margin-top: 20px;
+}
+
+.btn.info:hover{
+	background-color: lightgreen;
+	border: 2px solid lightgreen;
+}
