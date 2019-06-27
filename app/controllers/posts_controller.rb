@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   before_action :check_time!, only: %i[edit update]
 
   def index
-    if user_exist?
+    if user_exist? 
       @posts = Post.where(recipient_id: params[:user_id]).order('created_at DESC')
     else
       render file: "#{Rails.root}/public/404.html", layout: false, status: 404
