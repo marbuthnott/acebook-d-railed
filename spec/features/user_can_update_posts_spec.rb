@@ -49,6 +49,7 @@ RSpec.feature 'Posts', type: :feature do
     expect(page).to have_content(
       'Post can only be deleted or edited by its author!'
     )
+  end
 
   scenario 'flash message if edit button clicked after 10 minutes' do
     sign_up(username: 'test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
