@@ -17,3 +17,4 @@ RSpec.feature 'Posts', type: :feature do
     expect(page).to have_content('Message can\'t be blank')
   end
 end
+ 

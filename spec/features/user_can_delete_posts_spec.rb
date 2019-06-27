@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Posts', type: :feature do
+
   scenario 'Users are able to delete their own posts' do
     sign_up(
       username: 'test',
@@ -12,6 +13,7 @@ RSpec.feature 'Posts', type: :feature do
     )
     click_link 'Sign out'
     sign_in_and_add_post(message: 'Post number one')
+
     add_post(message: 'This is the second post')
 
     first(:button, 'Delete').click

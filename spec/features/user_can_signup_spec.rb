@@ -132,7 +132,6 @@ RSpec.feature 'Signup', type: :feature do
         password: '123456789',
         password_confirmation: '123456789'
       )
-
       expect(page).to have_content('Email is invalid')
     end
 
