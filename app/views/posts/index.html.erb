@@ -1,3 +1,4 @@
+
 <DOCTYPE html>
 <html>
   <head>
@@ -7,8 +8,9 @@
     
   <body>
     <%= wall.username %>'s wall.<br>
-    <h2><%= flash[:created_at] %></h2>
+    <h2><%= flash[:created_at] %></h2><br>
     <h2><%= flash[:success] %></h2><br>
+    <h2><%= flash[:edit_not_allowed] %></h2><br>
     <%= link_to new_user_post_path do %>
       New post
     <% end %><br>

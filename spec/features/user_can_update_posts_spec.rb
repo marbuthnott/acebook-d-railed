@@ -22,6 +22,35 @@ RSpec.feature 'Posts', type: :feature do
     expect(page).to have_content(updated_time)
   end
 
+  scenario 'Users cannot update posts that are not their own' do
+    sign_up(
+      username: 'test1',
+      email: 'test1@test.com',
+      password: 'password',
+      password_confirmation: 'password'
+    )
+    click_link 'Sign out'
+
+    sign_up(
+      username: 'test2',
+      email: 'test2@test.com',
+      password: 'password',
+      password_confirmation: 'password'
+    )
+    click_link('Members')
+    click_link('test1')
+    add_post(message: 'Post to be updated')
+    click_link 'Sign out'
+
+    sign_in(email: 'test1@test.com', password: 'password')
+    click_button('Edit')
+
+    expect(page).to have_content('Post to be updated')
+    expect(page).to have_content(
+      'Post can only be deleted or edited by its author!'
+    )
+  end
+
   scenario 'flash message if edit button clicked after 10 minutes' do
     sign_up(username: 'test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
     add_post(message: 'Post number one')
