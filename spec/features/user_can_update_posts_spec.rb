@@ -22,7 +22,7 @@ RSpec.feature 'Posts', type: :feature do
     expect(page).to have_content(updated_time)
   end
 
-  scenario 'Users are not able to update posts not their own' do
+  scenario 'Users cannot update posts that are not their own' do
     sign_up(
       username: 'test1',
       email: 'test1@test.com',

@@ -19,7 +19,7 @@ RSpec.feature 'Posts', type: :feature do
     expect(page).not_to have_content('This is the second post')
   end
 
-  scenario 'Users are not able to delete posts not their own' do
+  scenario 'Users cannot delete posts that are not their own' do
     sign_up(
       username: 'test1',
       email: 'test1@test.com',

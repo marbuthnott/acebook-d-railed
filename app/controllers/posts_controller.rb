@@ -3,7 +3,7 @@
 require 'pry'
 class PostsController < ApplicationController
   before_action :can_edit, only: %i[edit update destroy]
-  before_action :check_time!, only: %i[edit update]
+  before_action :check_time, only: %i[edit update]
 
   def index
     @posts = Post.where(recipient_id: params[:user_id]).order('created_at DESC')
@@ -60,11 +60,11 @@ class PostsController < ApplicationController
     end
   end
 
-  def check_time!
+  def check_time
     if Time.now > @post.created_at + 10.minutes
       flash[:created_at] =
         'Post can only be edited 10 min after it has been created'
-      redirect_to user_post_path(current_user)
+      redirect_to user_posts_path(current_user)
     end
   end
 
