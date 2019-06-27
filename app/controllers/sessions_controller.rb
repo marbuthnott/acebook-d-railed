@@ -3,7 +3,9 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
 
-  def new; end
+  def new
+    redirect_to user_posts_path(current_user) if !current_user.nil?
+  end
 
   def create
     user = User.find_by_email(params[:email])
