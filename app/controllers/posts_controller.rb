@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    check_time!
+    check_time
     @post = Post.find(params[:id])
   end
 
