@@ -6,7 +6,11 @@ class PostsController < ApplicationController
   before_action :check_time, only: %i[edit update]
 
   def index
-    @posts = Post.where(recipient_id: params[:user_id]).order('created_at DESC')
+    if user_exist? 
+      @posts = Post.where(recipient_id: params[:user_id]).order('created_at DESC')
+    else
+      render file: "#{Rails.root}/public/404.html", layout: false, status: 404
+    end
   end
 
   def show
@@ -48,6 +52,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def user_exist?
+    User.where(id: params[:user_id]).exists?
+  end
 
   def get_username(user_id)
     User.find(user_id).username
