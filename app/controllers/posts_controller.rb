@@ -54,7 +54,9 @@ class PostsController < ApplicationController
   def can_edit
     @post = Post.find(params[:id])
     unless @post && current_user && current_user.can_edit?(@post)
-      redirect_to user_post_path(current_user)
+      flash[:edit_not_allowed] =
+        'Post can only be deleted or edited by its author!'
+      redirect_to user_posts_path(current_user)
     end
   end
 
@@ -62,7 +64,7 @@ class PostsController < ApplicationController
     if Time.now > @post.created_at + 10.minutes
       flash[:created_at] =
         'Post can only be edited 10 min after it has been created'
-      redirect_to user_posts_path(current_user)
+      redirect_to user_post_path(current_user)
     end
   end
 
