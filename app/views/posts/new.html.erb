@@ -1,3 +1,15 @@
+
+<% if @post.errors.any? %>
+<div id="error_explanation">
+  <h3>
+    <%= pluralize(@post.errors.count, "error") %>
+  </h3>
+  <% @post.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</div>
+<% end %>
+
 <%= form_for(@post, url: user_posts_path) do |form| %>
 
   <%= form.label :message %><br>

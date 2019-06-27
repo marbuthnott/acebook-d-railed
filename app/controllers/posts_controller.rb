@@ -19,8 +19,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params.merge(user_id: session[:user_id]))
-    redirect_to user_posts_path(post_params[:recipient_id])
+    @post = Post.new(post_params.merge(user_id: session[:user_id]))
+    if @post.valid?
+      @post.save
+      redirect_to user_posts_path(post_params[:recipient_id])
+    else 
+      render :new
+    end 
   end
 
   def destroy
@@ -32,6 +37,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    check_time!
     @post = Post.find(params[:id])
   end
 
@@ -62,7 +68,7 @@ class PostsController < ApplicationController
     if Time.now > @post.created_at + 10.minutes
       flash[:created_at] =
         'Post can only be edited 10 min after it has been created'
-      redirect_to user_posts_path(current_user)
+        redirect_to user_posts_path(@post.recipient_id)
     end
   end
 
