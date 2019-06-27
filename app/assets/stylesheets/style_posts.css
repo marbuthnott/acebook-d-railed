@@ -1,0 +1,35 @@
+.navbar-light .navbar-brand{
+	color: #C5834E !important;
+	font-family: Papyrus;
+	font-size: 40px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.nav-link{
+	color: #846D3B !important;
+	font-size: 20px;
+	/*padding-left: 25px !important;
+	padding-right: 25px !important;*/
+	position: relative;
+	display: inline-block;
+}
+
+.nav-link:hover{
+	color: #BF8342 !important;
+
+}
+
+.nav-link::before{
+	content: '';
+	display: block;
+	height: 3px;
+	background-color: #BF8342;
+	position: absolute;
+	top: 0;
+	width: 0%;
+}
+
+.nav-link:hover::before{
+	width: 100%;
+}
