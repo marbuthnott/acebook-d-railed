@@ -26,4 +26,17 @@ RSpec.feature 'Users Wall', type: :feature do
     expect(page).to have_content('Logged in as test')
     expect(page).to have_content('test\'s wall')
   end
+
+  scenario 'User is directed to their wall if there' do
+    sign_up(
+      username: 'test',
+      email: 'test@test.com',
+      password: 'password',
+      password_confirmation: 'password'
+    )
+    visit(root_path)
+    user = User.all[0]
+
+    expect(page).to have_current_path("/users/#{user.id}/posts")
+  end
 end
