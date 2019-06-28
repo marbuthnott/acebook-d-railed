@@ -171,11 +171,7 @@ I want to be able to see a Home link on all pages
 
 **Primary programming language:** *Ruby on Rails*, or Rails, is a server-side web application framework written in Ruby. Rails is a model–view–controller framework, providing default structures for a database, a web service, and web pages.
 
-**Other programming languages:** *HTML/CSS* is used for styling in the browser.
-
-
-Bootstrap/Javascript section here?
-
+**Other programming languages:** *HTML/CSS/Javascript* is used for styling in the browser. Bootstrap has been used as our CSS framework.
 
 **Unit testing framework:** *RSpec* is a Behaviour Driven Development for Ruby, run from the command line.
 
@@ -189,6 +185,10 @@ Bootstrap/Javascript section here?
 
 ## MODELS/IMAGES
 
-FEATURE MODEL:
+MVC model:
 
 ![Acebook-d-railed  feature model](./images/acebook_request_response_cycle.png)
+
+CRC model:
+
+![Acebook-d-railed CRC model](./images/acebook_crc.png)
