@@ -18,11 +18,11 @@
   						<div class='label'>
   							<%= label_tag :email, 'Email' %>
   						</div>
-  				    <%= text_field_tag :email, params[:email], class:'form-control', placeholder:'Email' %>
+  				    <%= text_field_tag :email, params[:email], class:'form-control' %>
   				    <div class='label'>
   				    	<%= label_tag :password, 'Password' %>
   				    </div>
-  				   	<%= password_field_tag :password, params[:password], class:'form-control', placeholder:'Password' %>
+  				   	<%= password_field_tag :password, params[:password], class:'form-control' %>
   				    <a href='<%= posts_path %>'><div class='btn btn-info'><%= submit_tag "SIGN IN", class:'btn' %></div></a><br>
   				  <% end %>
         	</div>

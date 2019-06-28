@@ -19,7 +19,7 @@ RSpec.feature 'Signup', type: :feature do
     scenario 'it has a name field' do
       go_to_homepage
 
-      expect(page).to have_field("user[username]")
+      expect(page).to have_field('user[username]')
     end
 
     scenario 'it has a password confirmation field' do
@@ -160,12 +160,21 @@ RSpec.feature 'Signup', type: :feature do
     end
 
     scenario 'user doesn\'t provide a unique user name' do
-      sign_up(username: 'test', email: 'test@test.com', password: '123456789', password_confirmation: '123456789')
+      sign_up(
+        username: 'test',
+        email: 'test@test.com',
+        password: '123456789',
+        password_confirmation: '123456789'
+      )
       click_link 'Sign out'
-      sign_up(username: 'test', email: 'test@test.co.uk', password: '123456789', password_confirmation: '123456789')
+      sign_up(
+        username: 'test',
+        email: 'test@test.co.uk',
+        password: '123456789',
+        password_confirmation: '123456789'
+      )
       expect(page).to have_content('Username has already been taken')
     end
-
   end
 
   scenario 'after completing the signup form it navigates to posts page' do
@@ -176,7 +185,7 @@ RSpec.feature 'Signup', type: :feature do
       password_confirmation: 'password'
     )
     user = User.all[0]
-    
+
     expect(page).to have_current_path("/users/#{user.id}/posts")
     expect(page).to have_content('Welcome to Acebook by D-Railed!')
   end

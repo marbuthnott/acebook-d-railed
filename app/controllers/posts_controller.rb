@@ -3,10 +3,14 @@
 require 'pry'
 class PostsController < ApplicationController
   before_action :can_edit, only: %i[edit update destroy]
-  before_action :check_time!, only: %i[edit update]
+  before_action :check_time, only: %i[edit update]
 
   def index
-    @posts = Post.where(recipient_id: params[:user_id]).order('created_at DESC')
+    if user_exist?
+      @posts = Post.where(recipient_id: params[:user_id]).order('created_at DESC')
+    else
+      render file: "#{Rails.root}/public/404.html", layout: false, status: 404
+    end
   end
 
   def show
@@ -19,13 +23,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params.merge(user_id: session[:user_id]))
+    @post = Post.new(
+      post_params.merge(user_id: session[:user_id])
+    )
     if @post.valid?
       @post.save
       redirect_to user_posts_path(post_params[:recipient_id])
-    else 
+    else
       render :new
-    end 
+    end
   end
 
   def destroy
@@ -37,7 +43,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    check_time!
+    check_time
     @post = Post.find(params[:id])
   end
 
@@ -48,6 +54,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def user_exist?
+    User.where(id: params[:user_id]).exists?
+  end
 
   def get_username(user_id)
     User.find(user_id).username
@@ -60,15 +70,17 @@ class PostsController < ApplicationController
   def can_edit
     @post = Post.find(params[:id])
     unless @post && current_user && current_user.can_edit?(@post)
-      redirect_to user_post_path(current_user)
+      flash[:edit_not_allowed] =
+        'Post can only be deleted or edited by its author!'
+      redirect_to user_posts_path(@post.recipient_id)
     end
   end
 
-  def check_time!
+  def check_time
     if Time.now > @post.created_at + 10.minutes
       flash[:created_at] =
         'Post can only be edited 10 min after it has been created'
-        redirect_to user_posts_path(@post.recipient_id)
+      redirect_to user_posts_path(@post.recipient_id)
     end
   end
 
