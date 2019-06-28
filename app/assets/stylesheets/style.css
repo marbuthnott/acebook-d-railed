@@ -46,11 +46,22 @@ h1{
 }
 
 .label{
-	font-size: 20px;
-	color: #BACAE1;
-	font-weight: normal;
+	font-size: 20px !important;
+	font-weight: bold !important;
+	color: #BACAE1 !important;
 }
-
+.list-of-peeps{
+	background: transparent !important;
+	border: 3px !important;
+	color: white !important;
+	font-weight: normal !important;
+	font-size: 17px !important;
+	padding: 10px;
+	text-align: center;
+}
+.links{
+	color: #C5834E;
+}
 .a_signup{
 	border-bottom: 2px solid #CE9254;
 	padding: 10px;
@@ -65,7 +76,9 @@ h1{
 	background: transparent !important;
 	border: 0px !important;
 	border-bottom: 2px solid #CE9254 !important;
-	font-size: 20px;
+	color: white !important;
+	font-weight: normal !important;
+	font-size: 17px !important;
 	padding: 10px;
 }
 
@@ -86,6 +99,7 @@ h1{
 
 .btn{
 	background-color: transparent !important;
+	font-size: 20px !important;
 }
 
 .footer{
