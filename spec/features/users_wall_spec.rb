@@ -24,6 +24,6 @@ RSpec.feature 'Users Wall', type: :feature do
     )
 
     expect(page).to have_content('Logged in as test')
-    expect(page).to have_content('test\'s wall')
+    expect(page).to have_content('test\'s Wall')
   end
 end

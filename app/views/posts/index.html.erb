@@ -12,8 +12,8 @@
         <div class='col-md-12' id='wrapper'>
           <div class='wall'><%= wall.username %>'s Wall</div><br>
 
-          <h2><%= flash[:created_at] %></h2>
-          <h2><%= flash[:success] %></h2><br>
+          <h2 class='errors'><%= flash[:created_at] %></h2>
+          <h2 class='errors'><%= flash[:success] %></h2><br>
 
           <%= link_to new_user_post_path do %>
             <p class='posts'>New post</p>
@@ -32,20 +32,20 @@
                     </div>
                   </div>
                   <% pre_like = post.likes.find { |like| like.user_id == current_user.id } %>
-                  <div class='likes'>
+                  <span class='likes'>
                     <% if pre_like %>
                       <%= button_to Emoji.find_by_alias("thumbsdown").raw, post_like_path(post.id, pre_like.id), method: :delete %>
                     <%else %>
                       <%= button_to Emoji.find_by_alias("thumbsup").raw, post_likes_path(post.id), method: :post %>
                     <% end %>
                     <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
-                  </div>
-                  <div class='buttons'>
-                  <%= button_to "Edit", edit_user_post_path(:user_id => post.recipient_id, :id => post.id) %>
-                  <%= button_to "Delete", user_post_path(:id => post.id), :method => :delete, data: {confirm: 'Are you sure?'} %>
-                </div>
+                  </span>
+                  <span class='buttons'>
+                    <%= button_to "Edit", edit_user_post_path(:user_id => post.recipient_id, :id => post.id) %>
+                    <%= button_to "Delete", user_post_path(:id => post.id), :method => :delete, data: {confirm: 'Are you sure?'} %>
+                  </span>
                 </li>
-              </ul>
+                </ul>
             <% end %>
           </div>
       </div>
