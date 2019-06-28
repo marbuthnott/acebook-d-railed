@@ -23,6 +23,8 @@ RSpec.feature "User's wall", type: :feature do
       password_confirmation: 'password'
     )
     visit '/users/1/posts'
-    expect(page).to have_content('The meerkat you were looking for is no longer in the burrow.')
+    expect(page).to have_content(
+      'The meerkat you were looking for is no longer in the burrow.'
+    )
   end
 end

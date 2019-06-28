@@ -105,8 +105,24 @@ So that I know when a post was made
 I can see the date and time a post was created/updated
 
 As a signed-in user
+So that I know who wrote a post
+I can see the username next to each post
+
+As a signed-in user
 So that I can manage my posts
 I want to be able to update posts for a maximum of 10 mins after it was created
+
+As a signed in user
+So I can tell my friends how awesome they posts are
+I want to be able to like there posts
+
+As a signed in user
+So I can tell my friends how unimpressive they posts are
+I want to be able to unlike there posts
+
+As a signed in user
+So I can get some feedback about my posts
+I want to be able to see how many likes I have next to my posts
 
 As a signed-in user
 So I don't accidentally update another user's post
@@ -120,6 +136,36 @@ As a signed-in user
 So that I don't accidentally delete another users post
 I will see an error message if I try to delete another users post
 ```  
+User's Walls
+```
+As a signed in user
+So I can see my own posts
+I want to be redirected to my own wall with all my posts when I sign in or sign up
+
+As a signed in user
+So I can see my friends posts
+I can go to any other users wall's and see their posts
+
+As a signed in user
+So I know who's wall I am on
+I want to see the wall owners username
+
+As a signed in user
+So I can tell my friends how awesome they are
+I can leave a post on other users walls
+
+As a signed in user
+So I know I am visiting a valid users wall
+I will see a custom 404 page if the user doesn’t exist
+
+As a signed in user
+So I can search for my friends
+I want to be able to see a list of all users
+
+As a signed in user
+So I can navigate back to my own page
+I want to be able to see a Home link on all pages
+```
 
 ## TECH/FRAMEWORK USED
 
@@ -145,6 +191,4 @@ Bootstrap/Javascript section here?
 
 FEATURE MODEL:
 
-![Acebook-d-railed  feature model](./images/acebook_feature_diagram.png)
-(note ==> 'red' are additional features not included in user stories)
- 
+![Acebook-d-railed  feature model](./images/acebook_request_response_cycle.png)
