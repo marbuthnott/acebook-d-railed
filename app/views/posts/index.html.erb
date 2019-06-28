@@ -30,7 +30,7 @@
                     <%= post.message %>
                     <div class='post-date'>
                       [<%= link_to get_username(post.user_id), user_posts_path(post.user_id), class:'user_link' %>]
-                      [<%= post.updated_at.strftime("%Y-%m-%d, %H:%M")%>]
+                      [<%= post.updated_at.strftime("%d-%b-%Y, %H:%M")%>]
                     </div>
                   </div>
                   <% pre_like = post.likes.find { |like| like.user_id == current_user.id } %>
