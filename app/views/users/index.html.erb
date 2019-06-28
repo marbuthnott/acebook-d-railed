@@ -1,6 +1,12 @@
-<h1>Acebook member list</h1>
-<div>
-  <% @users.each do |user| %>
-    <%= link_to user.username, user_posts_path(user) %><br>
-  <% end %>
+<h1>Member list</h1>
+<div class= 'container'>
+  <div class='row'>
+    <div class='col-md-4'>
+     <div class="list-of-peeps">
+      <% @users.each do |user| %>
+       <%= link_to user.username, user_posts_path(user), class:'links'%><br>
+      <% end %>
+     </div>
+   </div>
+  </div>
 </div>

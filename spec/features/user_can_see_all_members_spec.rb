@@ -12,7 +12,7 @@ RSpec.feature 'Members page', type: :feature do
     )
     click_link('Members')
 
-    expect(page).to have_content('Acebook member list')
+    expect(page).to have_content('Member list')
   end
 
   scenario 'User can see all member usernames as links' do
