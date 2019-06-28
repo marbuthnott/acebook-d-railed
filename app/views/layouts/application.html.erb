@@ -44,6 +44,13 @@
             </form>
           </div>
         </div>
+           <%= form_for :user, url: '/users/search', :method => :get do |form| %>
+            <%= form.text_field :search, placeholder: "Search for users" %>
+            <%= form.submit "Go", class:'btn' %>
+            <%= form.hidden_field :recipient_id, :value => params[:user_id] %>
+           <% end %>
+
+           <%= flash[:search_error] %>
       </nav>
     <% end %>
    
