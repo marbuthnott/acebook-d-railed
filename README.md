@@ -112,6 +112,18 @@ As a signed-in user
 So that I can manage my posts
 I want to be able to update posts for a maximum of 10 mins after it was created
 
+As a signed in user
+So I can tell my friends how awesome they posts are
+I want to be able to like there posts
+
+As a signed in user
+So I can tell my friends how unimpressive they posts are
+I want to be able to unlike there posts
+
+As a signed in user
+So I can get some feedback about my posts
+I want to be able to see how many likes I have next to my posts
+
 As a signed-in user
 So I don't accidentally update another user's post
 I will see an error if I try to update a post not made my myself
