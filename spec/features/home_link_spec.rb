@@ -26,6 +26,6 @@ RSpec.feature 'Home button', type: :feature do
     click_link('Members')
     click_link('Home')
 
-    expect(page).to have_content('test\'s wall.')
+    expect(page).to have_content('test\'s Wall')
   end
 end
