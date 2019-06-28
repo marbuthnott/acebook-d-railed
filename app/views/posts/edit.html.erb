@@ -1,19 +1,12 @@
-<DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	</head>
-	
-	<body>
-		<h1>Edit Post</h1>
 
-		<%= form_for :post, url: user_post_path(@post), :method => :patch do |form| %>
-		  <%= form.label :message %>
-		  <%= form.text_area :message %>
-		  <%= form.hidden_field :recipient_id, :value => params[:user_id] %>
+<h1 class='edit'>Edit Post</h1>
+<div class='edit_posts'>
+	<%= form_for :post, url: user_post_path(@post), :method => :patch do |form| %>
 
-		  <%= form.submit "Update" %>
-		<% end %>
-	</body>
-</html>
+	  <%= form.label :message, class:'message_label' %><br>
+	  <%= form.text_area :message, class:'text_field' %><br>
+	  <%= form.hidden_field :recipient_id, :value => params[:user_id] %>
+
+	  <%= form.submit "Update", class:'submit' %>
+	<% end %>
+</div>

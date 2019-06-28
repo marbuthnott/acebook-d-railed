@@ -50,6 +50,11 @@ h1{
 	font-weight: bold !important;
 	color: #BACAE1 !important;
 }
+
+.members{
+	margin-top: 100px !important;
+}
+
 .list-of-peeps{
 	background: transparent !important;
 	border: 3px !important;
@@ -164,10 +169,10 @@ h1{
 
 .form-inline .btn-outline-success{
 	color: #C5834E !important;
-	border-color: transparent;
-	font-family: papyrus;
-	font-size: 20px;
-	position: relative;
+	border-color: transparent !important;
+	font-family: papyrus !important;
+	font-size: 20px !important;
+	position: relative !important;
 }
 
 .btn-outline-success:hover{
