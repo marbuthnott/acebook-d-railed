@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
 
   def new
-    redirect_to user_posts_path(current_user) if !current_user.nil?
+    redirect_to user_posts_path(current_user) unless current_user.nil?
   end
 
   def create

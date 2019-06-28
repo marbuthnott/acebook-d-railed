@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    redirect_to user_posts_path(current_user) if !current_user.nil?
+    redirect_to user_posts_path(current_user) unless current_user.nil?
     @user = User.new
   end
 
