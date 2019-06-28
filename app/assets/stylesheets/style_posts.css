@@ -1,0 +1,128 @@
+
+
+.col-md-12{
+	margin: auto;
+	margin-top: 80px;
+	background: rgba(0, 0, 0, 0.5);
+	box-shadow: -1px 120px -1px black;
+	padding: 10px;
+	border-radius: 25px;
+	position: sticky;
+	height: 1000px;
+}
+
+.wall{
+	text-align: center;
+	font-size: 50px;
+	font-weight: bold;
+	font-family: papyrus;
+	color: #C4833F;
+}
+
+.posts{
+	margin-left: 100px;
+	font-size: 30px;
+	font-family: papyrus;
+	color: #C4833F;
+}
+
+.posts:hover{
+	color: #E0D9C6 !important;
+}
+
+.post-text{
+	background-color: transparent;
+	border: 2px solid #E0D9C6;
+	font-size: 15px;
+	height: 80px;
+	border-radius: 20px;
+	margin-left: 300px;
+	margin-right: 300px;
+	padding-top: 10px;
+	text-align: center;
+	color: #E0D9C6;
+}
+
+.post-date{
+	margin-top: 10px;
+}
+
+.likes{
+	margin-left: 400px;
+	font-size: 20px;
+	color: #C4833F;
+	display: inline-block;
+	position: relative;
+}
+
+.user_link{
+	font-size: small !important;
+}
+
+.buttons{
+	background: transparent;
+	border: none;
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+	font-size: 15px;
+	margin-left: 200px;
+	display: inline-block;
+	padding: 15px;
+}
+
+.new_posts{
+	margin-top: 200px;
+	text-align: center;
+}
+
+.text_field{
+  border: none;
+  resize: none;
+  border-radius: 0.35rem;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: -1px 120px -1px black;
+  padding-left: 10px;
+  padding-top: 8px;
+  width: 500px;
+  height: 200px;
+  font-size: 20px;
+  color: #E0D9C6;
+}
+
+.message_label{
+	font-family: papyrus !important;
+	font-size: 30px;
+	color: #C5834E;
+}
+
+.errors{
+	text-align: center;
+	color: red;
+}
+
+.submit{
+	background: #C5834E;
+	border: none;
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+	font-size: 15px;
+}
+
+
+.submit:hover{
+	background-color: #E0D9C6;
+}
+
+.edit{
+	margin-top: 100px !important;
+}
+
+.edit_posts{
+	margin-top: 50px;
+	text-align: center;
+}
+
+
+

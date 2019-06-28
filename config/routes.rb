@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
   get 'users/new'
   get 'posts/index'
+  get 'users/search' => 'users#search'
   post 'users/:user_id/posts/:id/edit' => 'posts#edit'
   patch '/users/:user_id/posts/:id' => 'posts#update'
 

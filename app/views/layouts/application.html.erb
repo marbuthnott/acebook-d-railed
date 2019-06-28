@@ -13,14 +13,6 @@
   </head>
 
   <body>
-    
-
-    <% if current_user %>
-      <%= link_to "Home", user_posts_path(current_user) %>
-      <%= link_to "Members", users_path %>
-      <%= link_to "Sign out", session_path("current"), method: "delete" %><br>
-      Logged in as <%= current_user.username %>.<br>
-    <% end %>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
@@ -28,9 +20,42 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
+    
+    <% if current_user %>
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class='container-fluid'>
+          <a class="navbar-brand" href="#">ACEBOOK</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <p class='logged'>Logged in as <strong><%= current_user.username %></strong></p>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class='nav-item active'>
+              <%= link_to "Home", user_posts_path(current_user), class:'nav-link' %></li>
+              <li class='nav-item'>
+              <%= link_to "Members", users_path, class:'nav-link' %></li>
+              <li class='nav-item'>
+              <%= link_to "Sign out", session_path("current"), method: "delete", class:'nav-link' %></li>
+            </ul>
+            <div class="form-inline my-2 my-lg-0">
+
+              <%= form_for :user, url: '/users/search', :method => :get do |form| %>
+                <%= form.text_field :search, placeholder: "Search for..." %>
+                <%= form.submit "Go", class:"btn btn-outline-success my-2 my-sm-0" %>
+                <%= form.hidden_field :recipient_id, :value => params[:user_id], class:"form-control mr-sm-2", id:'search' %>
+              <% end %>
+
+              <%= flash[:search_error] %>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <% end %>
+   
 
     <%= yield %>
-    <div class='footer'>
+    <div class='footer navbar-fixed-bottom'>
       <footer>
         <p>Copyright &copy Acebook by D-Railed 2019</p>
       </footer>

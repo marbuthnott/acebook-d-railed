@@ -17,10 +17,10 @@ body{
 	box-shadow: -1px 1px 30px 1-px black;
 	padding: 10px;
 	border-radius: 25px;
-} 
+}
 
 ul{
-	margin-bottom: 20px; 
+	margin-bottom: 20px;
 }
 
 ul a{
@@ -50,6 +50,11 @@ h1{
 	font-weight: bold !important;
 	color: #BACAE1 !important;
 }
+
+.members{
+	margin-top: 100px !important;
+}
+
 .list-of-peeps{
 	background: transparent !important;
 	border: 3px !important;
@@ -103,11 +108,75 @@ h1{
 }
 
 .footer{
-
 	position: relative;
 	bottom: 0;
 	width: 100%;
 	text-align: center;
 	color: white !important;
+}
+
+.user_link{
+	color: #C5834E;
+	font-size: 20px;
+}
+
+.container-fluid{
+	background-color: #E0D9C6;
+}
+
+.navbar-light .navbar-brand{
+	color: #C5834E !important;
+	font-family: Papyrus;
+	font-size: 40px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.nav-link{
+	color: #C5834E !important;
+	font-size: 20px;
+	position: relative;
+	display: inline-block;
+	font-family: papyrus;
+}
+
+.nav-link:hover{
+	color: #BF8342 !important;
+}
+
+.nav-link::before{
+	content: '';
+	display: block;
+	height: 3px;
+	background-color: #BF8342;
+	position: absolute;
+	top: 0;
+	width: 0%;
+}
+
+.nav-link:hover::before{
+	width: 100%;
+}
+
+.logged{
+	margin-top: 15px;
+	margin-left: 150px;
+	font-size: 20px;
+	font-family: papyrus;
+	letter-spacing: 1px;
+	color: #C5834E;
+}
+
+.form-inline .btn-outline-success{
+	color: #C5834E !important;
+	border-color: transparent !important;
+	font-family: papyrus !important;
+	font-size: 20px !important;
+	position: relative !important;
+}
+
+.btn-outline-success:hover{
+	color: #BF8342 !important;
+	border: 2px solid #BF8342 !important;
 }
 

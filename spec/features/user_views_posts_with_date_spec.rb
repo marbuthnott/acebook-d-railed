@@ -12,7 +12,7 @@ RSpec.feature 'Posts', type: :feature do
     )
     add_post(message: 'Hello, world!')
 
-    time = Post.all[0].updated_at.strftime('%Y-%m-%d, %H:%M')
+    time = Post.all[0].updated_at.strftime('%d %b %Y, %H:%M')
 
     expect(page).to have_content('Hello, world!')
     expect(page).to have_content(time)
