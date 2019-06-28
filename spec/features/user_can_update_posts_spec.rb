@@ -4,7 +4,12 @@ require 'rails_helper'
 
 RSpec.feature 'Posts', type: :feature do
   scenario 'user can update posts' do
-    sign_up(username: 'test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
+    sign_up(
+      username: 'test',
+      email: 'test@test.com',
+      password: 'password',
+      password_confirmation: 'password'
+    )
     add_post(message: 'Post number one')
 
     first(:button, 'Edit').click
@@ -52,15 +57,21 @@ RSpec.feature 'Posts', type: :feature do
   end
 
   scenario 'flash message if edit button clicked after 10 minutes' do
-    sign_up(username: 'test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
+    sign_up(
+      username: 'test',
+      email: 'test@test.com',
+      password: 'password',
+      password_confirmation: 'password'
+    )
     add_post(message: 'Post number one')
     Timecop.freeze(Time.now + 11.minutes)
-    post = Post.all[0]
     user = User.all[0]
 
     first(:button, 'Edit').click
 
-    expect(page).to have_content('Post can only be edited 10 min after it has been created')
+    expect(page).to have_content(
+      'Post can only be edited 10 min after it has been created'
+    )
     expect(page).to have_current_path("/users/#{user.id}/posts")
     Timecop.return
   end
