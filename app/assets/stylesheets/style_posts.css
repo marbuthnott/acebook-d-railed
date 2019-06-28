@@ -2,11 +2,61 @@
 
 .col-md-12{
 	margin: auto;
-	margin-top: 100px;
+	margin-top: 80px;
 	background: rgba(0, 0, 0, 0.5);
-	box-shadow: -1px 100px -1px black;
+	box-shadow: -1px 120px -1px black;
 	padding: 10px;
 	border-radius: 25px;
-	position: absolute;
+	position: sticky;
+	height: 1000px;
 }
 
+.wall{
+	text-align: center;
+	font-size: 50px;
+	font-weight: bold;
+	font-family: papyrus;
+	color: #C4833F;
+}
+
+.posts{
+	margin-left: 100px;
+	font-size: 30px;
+	font-family: papyrus;
+}
+
+.posts:hover{
+	color: #E0D9C6 !important;
+}
+
+.post-text{
+	background-color: transparent;
+	border: 2px solid #E0D9C6;
+	font-size: 15px;
+	height: 80px;
+	border-radius: 20px;
+	margin-left: 100px;
+	margin-right: 100px;
+	padding-top: 10px;
+	text-align: center;
+	color: #E0D9C6;
+}
+
+.post-date{
+	margin-top: 10px;
+}
+
+.likes{
+	margin-left: 150px;
+	font-size: 20px;
+	color: #C4833F;
+}
+
+.user_link{
+	font-size: small !important;
+}
+
+.buttons{
+	margin-left: 900px;
+	vertical-top:0px;
+}

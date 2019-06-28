@@ -96,6 +96,10 @@ h1{
 	color: white !important;
 }
 
+.container-fluid{
+	background-color: #E0D9C6;
+}
+
 .navbar-light .navbar-brand{
 	color: #C5834E !important;
 	font-family: Papyrus;
@@ -105,10 +109,11 @@ h1{
 }
 
 .nav-link{
-	color: #846D3B !important;
+	color: #C5834E !important;
 	font-size: 20px;
 	position: relative;
 	display: inline-block;
+	font-family: papyrus;
 }
 
 .nav-link:hover{
@@ -131,9 +136,24 @@ h1{
 
 .logged{
 	margin-top: 15px;
-	margin-left: 100px;
+	margin-left: 150px;
 	font-size: 20px;
-	font-family: cursive, Bradley Hand;
+	font-family: papyrus;
 	letter-spacing: 1px;
-	color: #846D3B;
+	color: #C5834E;
 }
+
+.form-inline .btn-outline-success{
+	color: #C5834E !important;
+	border-color: transparent;
+	font-family: papyrus;
+	font-size: 20px;
+	position: relative;
+}
+
+.btn-outline-success:hover{
+	color: #BF8342 !important;
+	border: 2px solid #BF8342 !important;
+}
+
+

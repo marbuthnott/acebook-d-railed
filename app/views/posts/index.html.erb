@@ -3,32 +3,33 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel='stylesheet' type='text/css' ref='app/assets/stylesheets/style_posts'>
+    <link rel='stylesheet' type='text/css' ref='stylesheets/style_posts'>
   </head>  
     
   <body>
     <div class='container'>
       <div class='row'>
         <div class='col-md-12' id='wrapper'>
-          <%= wall.username %>'s wall.<br>
+          <div class='wall'><%= wall.username %>'s Wall</div><br>
+
           <h2><%= flash[:created_at] %></h2>
           <h2><%= flash[:success] %></h2><br>
+
           <%= link_to new_user_post_path do %>
-            New post
+            <p class='posts'>New post</p>
           <% end %><br>
+
           <h2 id='error1'><%= flash[:liked] %></h2>
           <div>
             <% @posts.each do |post| %>
               <ul>
                 <li>
                   <div class='post-text'>
-                    <blockquote>
-                      <%= post.message %>
-                      <div class='post-date'>
-                        [<%= get_username(post.user_id) %>]
-                        [<%= post.updated_at.strftime("%Y-%m-%d, %H:%M")%>]
-                      </div>
-                    </blockquote>
+                    <%= post.message %>
+                    <div class='post-date'>
+                      [<%= link_to get_username(post.user_id), user_posts_path(post.user_id), class:'user_link' %>]
+                      [<%= post.updated_at.strftime("%Y-%m-%d, %H:%M")%>]
+                    </div>
                   </div>
                   <% pre_like = post.likes.find { |like| like.user_id == current_user.id } %>
                   <div class='likes'>
@@ -39,8 +40,10 @@
                     <% end %>
                     <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
                   </div>
+                  <div class='buttons'>
                   <%= button_to "Edit", edit_user_post_path(:user_id => post.recipient_id, :id => post.id) %>
                   <%= button_to "Delete", user_post_path(:id => post.id), :method => :delete, data: {confirm: 'Are you sure?'} %>
+                </div>
                 </li>
               </ul>
             <% end %>
