@@ -17,10 +17,10 @@ body{
 	box-shadow: -1px 1px 30px 1-px black;
 	padding: 10px;
 	border-radius: 25px;
-} 
+}
 
 ul{
-	margin-bottom: 20px; 
+	margin-bottom: 20px;
 }
 
 ul a{
@@ -110,6 +110,11 @@ h1{
 	color: white !important;
 }
 
+.user_link{
+	color: #C5834E;
+	font-size: 20px;
+}
+
 .container-fluid{
 	background-color: #E0D9C6;
 }
@@ -169,5 +174,4 @@ h1{
 	color: #BF8342 !important;
 	border: 2px solid #BF8342 !important;
 }
-
 
