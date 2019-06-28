@@ -4,8 +4,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>  
-    
+  </head>
+
   <body>
     <%= wall.username %>'s wall.<br>
     <h2><%= flash[:created_at] %></h2><br>
@@ -23,7 +23,7 @@
               <blockquote>
                 <%= post.message %>
                 <div class='post-date'>
-                  [<%= get_username(post.user_id) %>]
+                  [<%= link_to get_username(post.user_id), user_posts_path(post.user_id), class:'user_link' %>]
                   [<%= post.updated_at.strftime("%Y-%m-%d, %H:%M")%>]
                 </div>
               </blockquote>
