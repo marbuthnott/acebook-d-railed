@@ -27,7 +27,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def search
+    user = User.find_by_username(user_params[:search])
+    if user.nil?
+      flash[:search_error] = 'No users found'
+      (redirect_to user_posts_path(wall_owner)) && return
+    else
+      redirect_to user_posts_path(user)
+    end
+  end
+
   private
+
+  def wall_owner
+    User.find(user_params[:recipient_id])
+  end
+
+  def user_params
+    params.require(:user).permit(:search, :recipient_id)
+  end
 
   def signup_params
     params.require(:user).permit(
