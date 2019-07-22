@@ -1,12 +1,12 @@
 # AceBook
 
+![Acebook screenshot](./images/acebook_screenshot.png)
+
 *Co-authored by: Lucy Barber, Magnus Arbuthnott, Ollie Brownlow, Vlad Chiriac, Edina Bolkeny, Cosmin Catalin Croitoriu*
 
 *Read this repo's wiki for our development process*
 
 [![Build Status](https://travis-ci.org/marbuthnott/acebook-d-railed.svg?branch=master)](https://travis-ci.org/marbuthnott/acebook-d-railed)
-
-![Acebook screenshot](./images/acebook_screenshot.png)
 
 ## INTRODUCTION
 
