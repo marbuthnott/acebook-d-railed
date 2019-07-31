@@ -187,7 +187,7 @@ I want to be able to see a Home link on all pages
 
 ## MODELS/IMAGES
 
-MVC model:
+Domain model:
 
 ![Acebook-d-railed  feature model](./images/acebook_request_response_cycle.png)
 
